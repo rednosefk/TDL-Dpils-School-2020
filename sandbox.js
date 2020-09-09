@@ -139,17 +139,153 @@ const bill = (product, tax) => {
 
 let arr = [89, 46, 0, 35, 35, -35];
 
-const sortArray = (arr) => {
-    for (let i = 0; i < arr.length; i++) {
-        for (let j = i; j < arr.length; j++) {
-            if (arr[i] > arr[j]) {
-                let total = arr[i];
-                arr[i] = arr[j];
-                arr[j] = total;
-            }
-        }
+// const sortArray = (arr) => {
+//     for (let i = 0; i < arr.length; i++) {
+//         for (let j = i; j < arr.length; j++) {
+//             if (arr[i] > arr[j]) {
+//                 let total = arr[i];
+//                 arr[i] = arr[j];
+//                 arr[j] = total;
+//             }
+//         }
+//     }
+//     return arr;
+// }
+
+// console.log(sortArray(arr));
+
+// objects
+
+let user = {
+    name: 'Deniss',
+    age: 30,
+    email: 'deniss@gmail.com',
+    location: 'Latvia',
+    blogs: ['Why 2020 is the best year', 'Why burgers are good'],
+
+    // login: function() {
+    //     console.log('user logged in');
+    // },
+
+    login(){
+        console.log('user logged in');
+    },
+
+    // logout: function(){
+    //     console.log('User logged out');
+    // },
+
+    logout(){
+        console.log('User logged out');
+    },
+
+    logBlogs: function(){
+        console.log(this.blogs);
     }
-    return arr;
+
+};
+
+//console.log(this);
+
+user.name = 'Alex';
+console.log(user.logBlogs());
+
+
+// let car = {
+//     color: 'Silver',
+//     brand: 'Corolla',
+//     model: 'Verso',
+//     holder: function() {
+//         console.log('car holder name')
+//     },
+//     price: function(){
+//         console.log('car price')
+//     }
+// }
+
+// console.log(car.color);
+// console.log(car.holder());
+
+// math object
+
+console.log(Math);
+console.log(Math.PI);
+
+// const num = 7.7;
+
+// console.log(Math.round(num)); // rounds up and down
+// console.log(Math.floor(num)); // rounds down
+// console.log(Math.ceil(num)); //rounds up
+// console.log(Math.trunc(num)); //removes after comma
+
+// // random
+// const random = Math.random();
+// console.log(Math.random());
+// console.log(Math.round(random * 100));
+
+// let array = [{name: 'Deniss', age: 27}, {name: 'Max', age: 30}];
+// console.log(array[0].name); // value of parameter
+
+// task 
+let letters = [
+    {title: "N", score: 1},
+    {title: "K", score: 5},
+    {title: "Z", score: 10},
+    {title: "X", score: 8},
+    {title: "D", score: 2},
+    {title: "A", score: 1},
+    {title: "E", score: 1}
+];
+
+let scrab = function() {
+    let num = 0;
+    for(let i = 0; i < letters.length; i++){
+        num += letters[i].score;
+    }
+    return num;
 }
 
-console.log(sortArray(arr));
+console.log(scrab());
+
+// primitive type vs reference type
+
+// primitive types 
+//numbers, strings, booleans, ..
+
+//reference types
+//all types of objects, arrays, function
+
+// primitive type
+
+let scoreOne = 50;
+let scoreTwo = scoreOne;
+
+scoreOne = 100
+
+console.log(`score one: ${scoreOne} score thwo: ${scoreTwo}`);
+
+// ref
+
+let userOne = {name: 'Deniss', age: 30};
+let userTwo = userOne
+
+console.log(userOne, userTwo);
+userTwo.age = 40;
+
+console.log(userOne, userTwo);
+
+// task
+// let nums = {a: 1, b: 2};
+
+// const numsArr = Object.entries(nums);
+
+// numsArr.forEach(([key, value]) => {
+//     console.log(key, value);
+// });
+
+let nums = {a: 1, b: 2};
+
+let numsArr = Object.keys(nums).map((key) => [Number(key), nums[key]]);
+console.log(numsArr);
+
+
